@@ -46,3 +46,34 @@ button.when_released = led.off
 
 pause()
 ```
+
+## 4 Myndavél
+``` python
+from picamera import PiCamera
+from time import sleep
+
+camera = PiCamera()
+
+camera.start_preview()
+camera.capture('/home/pi/Desktop/image.jpg')
+camera.stop_preview()
+```
+
+## 5 Myndavél með takka
+``` python
+from gpiozero import Button
+from picamera import PiCamera
+from datetime import datetime
+from signal import pause
+
+button = Button(18)
+camera = PiCamera()
+
+def capture():
+    timestamp = datetime.now().isoformat()
+    camera.capture('/home/pi/%s.jpg' % timestamp)
+
+button.when_pressed = capture
+
+pause()
+```
