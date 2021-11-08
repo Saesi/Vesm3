@@ -90,3 +90,23 @@ pir.when_no_motion = led.off
 
 pause()
 ```
+
+## 7 PIR motion sencor og myndavél
+``` python
+from gpiozero import MotionSensor
+from picamera import PiCamera
+from datetime import datetime
+from signal import pause
+
+pir = MotionSensor(18)
+camera = PiCamera()
+
+def capture():
+    timestamp = datetime.now().isoformat()
+    camera.capture('/home/pi/%s.jpg' % timestamp)
+
+pir.when_motion = capture
+
+
+pause()
+```
