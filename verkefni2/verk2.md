@@ -1,3 +1,4 @@
+## 2 Blikandi LED með fade
 ``` python
 import RPi.GPIO as GPIO
 import time
