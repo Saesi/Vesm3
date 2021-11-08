@@ -1,3 +1,18 @@
+## 1 Blikandi LED ljós
+``` python
+from gpiozero import LED
+from time import sleep
+
+led = LED(18)
+
+while True:
+    led.on()
+    sleep(1)
+    led.off()
+    sleep(1)
+
+```
+
 ## 2 Blikandi LED með fade
 ``` python
 import RPi.GPIO as GPIO
