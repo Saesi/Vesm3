@@ -96,7 +96,6 @@ pause()
 import RPi.GPIO as GPIO
 import time
 import datetime
-import picamera
 import os
 import smtplib
 from email import encoders
