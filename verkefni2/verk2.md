@@ -32,3 +32,17 @@ while True:
   pwm.ChangeDutyCycle(i)
   time.sleep(0.01)
 ```
+
+## 3 LED með takka
+``` python
+from gpiozero import Button, LED
+from signal import pause
+
+button = Button(18)
+led = LED(12)
+
+button.when_pressed = led.on
+button.when_released = led.off
+
+pause()
+```
