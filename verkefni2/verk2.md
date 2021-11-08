@@ -77,3 +77,16 @@ button.when_pressed = capture
 
 pause()
 ```
+## 6 PIR motion sencor LED
+``` python
+from gpiozero import MotionSensor, LED
+from signal import pause
+
+pir = MotionSensor(25)
+led = LED(18)
+
+pir.when_motion = led.on
+pir.when_no_motion = led.off
+
+pause()
+```
