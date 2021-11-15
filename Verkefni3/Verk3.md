@@ -1,5 +1,5 @@
-## 3.2
-# read
+# 3.2
+## read
 ``` python
 import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
