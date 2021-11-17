@@ -182,3 +182,6 @@ void setup()
 
 void loop() {}
 ```
+## 3.4 iii er að vinna í
+
+# 3.5 Get ekki unnið því ég er einn
