@@ -1,5 +1,5 @@
 # 4.1
-## Raspberry Kóði Hluti 1
+### Raspberry Kóði Hluti 1
 ``` python
 import serial
 from gpiozero import LED
@@ -17,7 +17,7 @@ if __name__ == '__main__':
             led.on()
 ```
 
-## Arduino Kóði hluti 1
+### Arduino Kóði hluti 1
 ``` C+
 void setup() {
   Serial.begin(9600);
@@ -29,7 +29,7 @@ void loop() {
 }
 ```
 
-## Raspberry Kóði Hluti 2
+### Raspberry Kóði Hluti 2
 ``` python
 import serial
 import time
@@ -45,7 +45,7 @@ if __name__ == '__main__':
         time.sleep(1)
 ```
 
-## Arduino Kóði Hluti 2
+### Arduino Kóði Hluti 2
 ``` C+
 void setup() {
   Serial.begin(9600);
