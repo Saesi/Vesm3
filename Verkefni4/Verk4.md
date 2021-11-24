@@ -1,5 +1,5 @@
-#4.1
-## Raspberry Kóði
+# 4.1
+## Raspberry Kóði Hluti 1
 ``` python
 import serial
 from gpiozero import LED
@@ -15,4 +15,47 @@ if __name__ == '__main__':
             line = ser.readline().decode('utf-8').rstrip()
             print(line)
             led.on()
+```
+
+## Arduino Kóði hluti 1
+``` C+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println("Hello from Arduino!");
+  delay(1000);
+}
+```
+
+## Raspberry Kóði Hluti 2
+``` python
+import serial
+import time
+
+if __name__ == '__main__':
+    ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
+    ser.reset_input_buffer()
+
+    while True:
+        ser.write(b"Hello from Raspberry Pi!\n")
+        line = ser.readline().decode('utf-8').rstrip()
+        print(line)
+        time.sleep(1)
+```
+
+## Arduino Kóði Hluti 2
+``` C+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    String data = Serial.readStringUntil('\n');
+    Serial.print("You sent me: ");
+    Serial.println(data);
+  }
+}
 ```
