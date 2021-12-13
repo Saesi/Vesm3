@@ -1,6 +1,6 @@
 ## 6.2 Takki
 
-´´´python
+``` python
 
 from Adafruit_IO import *
 import RPi.GPIO as GPIO
@@ -19,4 +19,4 @@ while True: # Run forever
         print("Button was pushed!")
         aio.send("Button",msg)
 
-´´´
+```
