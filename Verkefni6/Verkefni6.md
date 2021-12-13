@@ -1,5 +1,7 @@
 ## 6.2 Takki
+
 ´´´ python
+
 from Adafruit_IO import *
 import RPi.GPIO as GPIO
 from gpiozero import Button
