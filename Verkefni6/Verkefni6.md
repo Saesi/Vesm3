@@ -1,3 +1,6 @@
+## 6.1
+Ég bjó til applet sem sendir mér tölvupóst um veðrið kl 21:00
+
 ## 6.2 Takki
 
 ``` python
