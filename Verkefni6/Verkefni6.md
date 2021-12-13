@@ -23,3 +23,6 @@ while True: # Run forever
         aio.send("Button",msg)
 
 ```
+
+## 6.3
+Ég er ekki með ESP32 svo ég get ekki gert þetta
