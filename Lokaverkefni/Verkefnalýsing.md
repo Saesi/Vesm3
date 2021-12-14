@@ -12,7 +12,7 @@ Ljósnemi minn er ekki að virkar ekki lamennilega svo það er byrjar að blikk
 import serial
 import RPi.GPIO as GPIO
 import time
-# import Adafruit IO
+import Adafruit IO
 from Adafruit_IO import Client
 import random
 
