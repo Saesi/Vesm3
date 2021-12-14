@@ -29,7 +29,7 @@ ser=serial.Serial("/dev/ttyAMA0",9600)
 #ser.baudrate=9600
 
 #Því að adafruit virkar ekki þá er þetta sýning á því sem á að gerast
-#weather = aio.receive("weather-status")
+#weather = aio.receive("Weather status")
 #print(weather)
 snow = "Snow"
 cloud = "Cloudy"
@@ -56,6 +56,113 @@ while True:
     msg = read_ser.decode('utf-8')
     print(msg.strip())
     time.sleep(1)
-    #aio.send("lightvalue", msg)
+    aio.send("lightvalue", msg)
 ```
 
+``` C+
+#include <FastLED.h>
+#define LED_PIN 2
+#define NUM_LEDS 120
+int ldr=A0;
+int value=0;
+
+CRGB leds[NUM_LEDS];
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
+  FastLED.clear();
+  FastLED.show();
+}
+
+void loop() {
+  value=analogRead(ldr);
+  Serial.println(value);
+  delay(1000);
+  if (Serial.available() > 0) {
+    String data = Serial.readStringUntil('\n');
+  // put your main code here, to run repeatedly:
+  if(data="Snow"){
+    if(value>=967){
+      delay(1000);
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(255, 255, 255);
+      }
+      FastLED.show();
+    }
+    if(value<967)
+    {
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(0,0,0);
+      }
+      FastLED.show();
+    }
+  }
+  if(data="Clear"){
+    if(value>=967){
+      delay(1000);
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(0, 0, 255);
+      }
+      FastLED.show();
+    }
+    if(value<967)
+    {
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(0,0,0);
+      }
+      FastLED.show();
+    }
+  }
+  if(data="Rain"){
+    if(value>=967){
+      delay(1000);
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(173, 216, 230);
+      }
+      FastLED.show();
+    }
+    if(value<967)
+    {
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(0,0,0);
+      }
+      FastLED.show();
+    }
+  }
+  if(data="Cloudy"){
+    if(value>=967){
+      delay(1000);
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(136, 8, 8);
+      }
+      FastLED.show();
+    }
+    if(value<967)
+    {
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(0,0,0);
+      }
+      FastLED.show();
+    }
+  }
+  }
+  else{
+    if(value<=974){
+      delay(1000);
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(246,194,137);
+      }
+      FastLED.show();
+    }
+    if(value>855)
+    {
+      for (int i=0; i<NUM_LEDS; i=i+2) {
+      leds[i] = CRGB(0,0,0);
+      }
+      FastLED.show();
+    }
+  }
+}
+```
