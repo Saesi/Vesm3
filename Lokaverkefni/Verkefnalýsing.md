@@ -58,7 +58,7 @@ while True:
     time.sleep(1)
     aio.send("lightvalue", msg)
 ```
-### Arduino
+### Arduino:
 ``` C
 #include <FastLED.h>
 #define LED_PIN 2
