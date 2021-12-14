@@ -5,6 +5,7 @@ Hægt væri að stjórna birtuni með ljósskynjara. Það á að fylgjast með 
 
 ## vesen
 Ljósnemi minn er ekki að virkar ekki lamennilega svo það er byrjar að blikka
+https://www.youtube.com/watch?v=Q1cPs0rsC54
 
 ## Þann kóði sem ég er kominn með:
 ### Raspberry pi:
