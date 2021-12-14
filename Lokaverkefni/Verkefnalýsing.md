@@ -87,7 +87,7 @@ void loop() {
     if(value>=967){
       delay(1000);
       for (int i=0; i<NUM_LEDS; i=i+2) {
-      leds[i] = CRGB(255, 255, 255);
+      leds[i] = CRGB(0, 255, 0);
       }
       FastLED.show();
     }
@@ -119,7 +119,7 @@ void loop() {
     if(value>=967){
       delay(1000);
       for (int i=0; i<NUM_LEDS; i=i+2) {
-      leds[i] = CRGB(173, 216, 230);
+      leds[i] = CRGB(0, 255, 255);
       }
       FastLED.show();
     }
@@ -155,6 +155,7 @@ void loop() {
       leds[i] = CRGB(246,194,137);
       }
       FastLED.show();
+      delay(10000);
     }
     if(value>855)
     {
