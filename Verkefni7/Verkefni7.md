@@ -67,3 +67,7 @@ while True:
     # timeout so we dont flood adafruit-io with requests
     time.sleep(0.5)
 ```
+
+
+## 7.5
+Ekki get ég gert þetta því ég er ekki með ESP32
