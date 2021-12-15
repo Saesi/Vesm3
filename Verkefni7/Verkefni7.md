@@ -86,3 +86,9 @@ while true:
 
 ## 7.5
 Ekki get ég gert þetta því ég er ekki með ESP32
+
+## 7.6
+Ekki get ég gert þetta því ég er ekki með ESP32
+
+## 7.7
+Ekki get ég gert þetta því ég er ekki með ESP32
