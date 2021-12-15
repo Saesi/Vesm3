@@ -67,7 +67,22 @@ while True:
     # timeout so we dont flood adafruit-io with requests
     time.sleep(0.5)
 ```
+## 7.4
+``` python
+from gpiozero import LED
+from Adafruit_IO import *
+import time
 
+aio = Client("Saesi04", "aio_vvoY24bkSn2ckpypEPwBcViasC2w")
+led = LED(5)
+
+while true:
+    x = aio.get("Daily LED")
+    if x == "Kveikja":
+        led.on()
+        time.sleep(20)
+        led.off()
+```
 
 ## 7.5
 Ekki get ég gert þetta því ég er ekki með ESP32
